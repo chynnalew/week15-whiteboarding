@@ -58,7 +58,9 @@ recursive solution:
 
   function replaceSpace(string) {
     if (string.length === 1){
-      return string;
+      if(string.charAt(0)=== " ") {
+        return "%20";
+      } return string.charAt(0);
     }
     let index = string.charAt(0);
     if (string.charAt(0) === " ") {
