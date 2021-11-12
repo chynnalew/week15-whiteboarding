@@ -1,0 +1,21 @@
+Turning Strings to URL's:
+
+prompt: 
+  URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+requirements: 
+  You can NOT use the replace() method or regex to solve this. solve with and without recursion.
+
+inputs/outputs: 
+  input: "jasmine ann jones"
+  output: "jasmine%20ann$20jones"
+
+  input: "hello there"
+  output: "hello%20there"
+
+questions to ask: 
+  can i expect only strings?
+  will the function expect only one input?
+
+potential edge cases:
+  numbers? (if the string may contain numbers)
