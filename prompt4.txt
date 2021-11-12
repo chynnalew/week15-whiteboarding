@@ -1,0 +1,36 @@
+Checking for uniqueness
+----------------------------------------
+
+prompt:
+  write an algorithm that determines whether all the elements in a string are unique. the algorithm should return a bool
+
+requirements:
+  do NOT convert the string to an array or use array methods
+
+----------------------------------------
+
+questions to ask:
+  any special characters? spaces? punctuation? should those count as characters or be ignored
+
+possible edge cases:
+  ignoring spaces
+  empty strings
+
+----------------------------------------
+
+inputs/outputs:
+
+  input: "hello"
+  output: "false"
+
+  input: "you"
+  output: "true"
+
+----------------------------------------
+
+standard plain text steps:
+
+
+standard solution:
+
+
