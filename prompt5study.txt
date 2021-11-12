@@ -134,4 +134,33 @@ quick sort for alphabetical sorting plain text steps
     if (array.length === 1)
       return array[0];
 
+
+  quick sort alphabetical solution:
+
+  function quick(array) {
+    if (array.length === 1) {
+      return array[0];
+    }
+    const alpha = [a, b, c, d, e, f, g, h, i, j, k , l, m, n, o, p, q, r, s, t, u, v, w, x, y , z]
+    let earlier = [];
+    let later = [];
+    const pivot = array[array.length-1];
+    for( let i = 0; i < array.length -1; i++) {
+      if (alpha.indexOf(array[i].charAt(0)) >= alpha.indexOf(pivot.charAt(0)) {
+        later.push(array[i]);
+      } else{
+        earlier.push(array[i]);
+      }
+    }
+    if (earlier.length > 0 && later.length === 0) {
+      return [quick(earlier), pivot];
+    } 
+    if (later.length > 0 && earlier.length === 0) {
+      return [pivot, quick(later)];
+    }
+    if (later.length > 0 && earlier.length > 0) {
+      return [quick(earlier), pivot, quick(later)]
+    }
+  }
+
   --- does not take into account sorting words with the same first letter by second letter and so on
