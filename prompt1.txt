@@ -21,16 +21,37 @@ potential edge cases:
   a string with one character? with none?
 
 
-plain text steps:
+standard solution plain text steps:
   1) separate string into array at " " with .split method
   2) rejoin array into a new string with .join("%20") to add the new element between each array element.
   3) return the new string
 
-plain text steps, recursion:
-  1) create function that takes three arguments(the string, the character to replace, what to replace it with)
+standard solution:
+
+  function replaceSpace(string) {
+    return string.split().join("%20);
+  }
+
+  replaceSpace(string) => string.split.join(%20);
+
+recursion plain text steps:
+  1) create function that takes the string
   2) use the .length method to see if the string is only one character, if so, return the string (this is the branch that will break the recursive loop)
   3) create a variable to store the current charIndex (index)
   4) begin branching. If the string.charAt(0) === a space, change the value of index (index = %20)
-  5) outside of branch, return index+function(input.substring(1), character to replace, what to replace with)
+  5) outside of branch, return index+function(input.substring(1))
 
     .substring method tells the function to only look at the remainder of the string starting at index 1 - repeating this over and over will loop through the whole string
+
+recursive solution:
+
+  function replaceSpace(string) {
+    if (string.length === 1){
+      return string;
+    }
+    let index = string.charAt(0);
+    if (string.charAt(0) === " ") {
+      index = "%20"
+    }
+    return index+replaceSpace(string.substring(1));
+  }
