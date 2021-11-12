@@ -1,0 +1,38 @@
+Removing duplicates
+----------------------------------------
+
+prompt:
+  Write an algorithm that removes any duplicates from an array
+
+requirements:
+  Solve the prompt WITHOUT using filter().
+  -Then show how it would be solved with filter().
+  Solve with and without recursion.
+
+----------------------------------------
+
+questions to ask: 
+  Is the input always an array?
+  How long/short is the input?
+
+possible edge cases:
+  an empty array
+  the same number in string form/ int form
+
+----------------------------------------
+
+inputs/outputs:
+
+  input: [7, 9, "hi", 7, 53]
+  output: [7, 9, "hi", 12, 53]
+
+  input: [7, 7, 7]
+  output: [7]
+
+  input: [7, "7"]
+  output: ?
+
+  input: []
+  output: ? || return empty array?
+
+----------------------------------------

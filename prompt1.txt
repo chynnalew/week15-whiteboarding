@@ -1,4 +1,5 @@
 Turning Strings to URL's:
+----------------------------------------
 
 prompt: 
   URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
@@ -6,12 +7,7 @@ prompt:
 requirements: 
   You can NOT use the replace() method or regex to solve this. solve with and without recursion.
 
-inputs/outputs: 
-  input: "jasmine ann jones"
-  output: "jasmine%20ann$20jones"
-
-  input: "hello there"
-  output: "hello%20there"
+----------------------------------------
 
 questions to ask: 
   can i expect only strings?
@@ -20,6 +16,19 @@ questions to ask:
 potential edge cases:
   a string with one character? with none?
 
+----------------------------------------
+
+inputs/outputs: 
+  input: "jasmine ann jones"
+  output: "jasmine%20ann$20jones"
+
+  input: "hello there"
+  output: "hello%20there"
+
+  input: "i"
+  output: "i"
+
+----------------------------------------
 
 standard solution plain text steps:
   1) separate string into array at " " with .split method
@@ -33,6 +42,8 @@ standard solution:
   }
 
   replaceSpace(string) => string.split.join(%20);
+
+----------------------------------------
 
 recursion plain text steps:
   1) create function that takes the string
