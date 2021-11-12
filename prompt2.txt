@@ -14,6 +14,7 @@ requirements:
 questions to ask: 
   Is the input always an array?
   How long/short is the input?
+  do the remaining elements need to appear in the same order?
 
 possible edge cases:
   an empty array
@@ -36,3 +37,28 @@ inputs/outputs:
   output: ? || return empty array?
 
 ----------------------------------------
+
+standard plain text steps:
+  1) declare an empty array to push elements into (noDupe = [])
+  2) loop through the original array 
+  3) branch - if !noDupe.includes(i), noDupe.push(i), else do nothing
+  4) return noDupe
+
+standard solution:
+
+----------------------------------------
+
+standard plain text steps with filter():
+  .filter() takes a function as an argument, creating a new array with all elements that pass the "test" in the argument function.
+
+  1) use filter taking two arguments 1. element, 2. index
+  2) include in new array if the array.indexOf(element) === index
+    -this searches through new array to see if the first instance of the element is in the same index as the current index you are looking at. if so, keep that element! if not, that element already exists and the current index is a duplicate
+
+filter solution:
+
+----------------------------------------
+
+recursive plain text steps:
+  1) not sure... moving on for time sake and will come back to this :)
+
