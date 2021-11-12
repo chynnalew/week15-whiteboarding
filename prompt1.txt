@@ -18,4 +18,19 @@ questions to ask:
   will the function expect only one input?
 
 potential edge cases:
-  numbers? (if the string may contain numbers)
+  a string with one character? with none?
+
+
+plain text steps:
+  1) separate string into array at " " with .split method
+  2) rejoin array into a new string with .join("%20") to add the new element between each array element.
+  3) return the new string
+
+plain text steps, recursion:
+  1) create function that takes three arguments(the string, the character to replace, what to replace it with)
+  2) use the .length method to see if the string is only one character, if so, return the string (this is the branch that will break the recursive loop)
+  3) create a variable to store the current charIndex (index)
+  4) begin branching. If the string.charAt(0) === a space, change the value of index (index = %20)
+  5) outside of branch, return index+function(input.substring(1), character to replace, what to replace with)
+
+    .substring method tells the function to only look at the remainder of the string starting at index 1 - repeating this over and over will loop through the whole string
