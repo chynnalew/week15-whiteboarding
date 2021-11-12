@@ -8,6 +8,7 @@ hints:
   check out the following sorting algorithms
     quick sort - 
       select a pivot element and divide the array into two halves where arr1 = elements smaller than pivot and arr2 = element larger than pivot
+
     merge sort
     heap sort
     insertion sort
@@ -104,3 +105,33 @@ quick sort solution:
     }
   }
 ----------------------------------------
+
+quick sort for alphabetical sorting plain text steps
+  1) create a function that takes an array as an argument
+  2) first instantiate an array containing each element of the alphabet
+    const alpha = [a, b, c, d, e, f, g, h, i, j, k , l, m, n, o, p, q, r, s, t, u, v, w, x, y , z]
+  3) select the array element to use as a pivot (array[0])
+  4) isolate the pivot element and the remaining array
+    const pivot = array[0];
+    const remainingArray = array.splice(1, array.length-1)
+  5) declare two empty variable to hold the later letters and earlier letters in relation to the pivot letter
+  6) iterate through the remainingArray
+    for (let i=0, i< remainingArray.length; i ++)
+    a) if the first letter of the pivot has a lower index in the alpha array than the first letter of the element in the alpha array, push to laterLetters
+      if(alpha.indexOf(pivot.charAt(0)) > aplha.indexOf(remainingArray[i].charAt(0)))
+        laterLetters.push(remainingArray[i])
+    b) if the first letter of the pivot has a higher index in the alpha array than the first letter of the element (in the alpha array), push to earlierLetters
+      if(alpha.indexOf(pivot.charAt(0)) <= alpha.indexOf(remainingArray[i].charAt(0)))
+        earlierLetters.push(remainingArray[i])
+  7) once the two arrays are created, check for three conditions and return accordingly:
+    a) if(earlierLetters.length > 0 && laterLetters.length > 0)
+      return [function(earlierLetters), pivot, function(laterLetters);
+    b) if(earlierLetters.length > 0 && laterLetters.length === 0)
+      return [function(earlierLetters), pivot]
+    c) b) if(earlierLetters.length === 0 && laterLetters.length > 0)
+      return [pivot, function(laterLetters)]
+  8) add break conditional to stop recursive loop
+    if (array.length === 1)
+      return array[0];
+
+  --- does not take into account sorting words with the same first letter by second letter and so on
