@@ -2,11 +2,12 @@ Array Sorting
 ----------------------------------------
 
 prompt:
-  write an algorithm that sorts and array without using the sort() method
+  write an algorithm that sorts an array without using the sort() method
 
 hints:
   check out the following sorting algorithms
-    quick sort 
+    quick sort - 
+      select a pivot element and divide the array into two halves where arr1 = elements smaller than pivot and arr2 = element larger than pivot
     merge sort
     heap sort
     insertion sort
@@ -38,17 +39,68 @@ inputs/outputs:
 
 ----------------------------------------
 
-standard plain text steps:
+quick sort algorithm:
+  1) pick "pivot" element to compare everything to (last element?)
+  2) first, starting from i=0 i++, find the first element that is larger than the pivot, set this equal to large
+  3) second, starting from length -2 (the item to the right of the pivot) i--, find the first element that is smaller than the pivot, set this equal to small
+  4) swap large and small
+  5) repeat this process until the larger number has a larger index than the smaller number
+    - when this condition is met, swap larger number with the pivot
+    - now all numbers to the right of pivot are larger and all numbers to the left of pivot are smaller
+  6) repeat steps 2 - 5 with the larger side
+  7) repeat steps 2-5 with smaller side
+  8) rinse and repeat (recurse) till everything is sorted
+      
+quick sort plain text steps:
+  1) how we'll break out of recursive loop:
+    if array.length === 1
+    return the array
+  2) create a variable to store the pivot (last element in the array)
+    const pivot = array[array.length-1]
+  3) start a for loop with all elements except the pivot
+    for( let i = 0; i<array.length-1; i++)
+  4) create two empty array variables to hold larger and smaller elements
+    let larger = [];
+    let smaller = [];
+  5)in the for loop:
+    if (array[i] > pivot) then larger.push(array[i])
+    if (array[i] < pivot) then smaller.push(array[i])
+  6) after the loop, check to see if the arrays both contain elements
+      three scenarios to handle with branching:
+      a) branch where larger.length > 0 and smaller.length === 0
+        1) return a new array where the pivot is first, followed by the larger array passed through the function
+          return [pivot, function(larger)];
+      b) branch where smaller.length > 0 and larger.length === 0
+        1) return a new array where the smaller function is run through the function and the pivot comes after
+          return [function(smaller), pivot]
+      c) branch where larger.length > 0 and smaller.length > 0
+        1) return a new array where the smaller array is run recursively, pivot is in the middle, larger array is run recursively
+          return [function(smaller), pivot, function(larger)];
 
+quick sort solution:
 
-standard solution:
-
-
+  function quick(array) {
+    if (array.length === 1) {
+      return array;
+    }
+    let larger = [];
+    let smaller = [];
+    const pivot = array[array.length-1];
+    for( let i = 0; i < array.length -1; i++) {
+      if (array[i] >= pivot) {
+        larger.push(array[i]);
+      } else{
+        smaller.push(array[i]);
+      }
+    }
+    if (smaller.length > 0 && larger.length === 0) {
+      return [quick(smaller), pivot];
+    } 
+    if (larger.length > 0 && smaller.length === 0) {
+      return [pivot, quick(larger)];
+    }
+    if (larger.length > 0 && smaller.length > 0) {
+      return [quick(smaller), pivot, quick(larger)]
+    }
+  }
 ----------------------------------------
-
-recursive plain text steps:
-
-
-recursive solution:
-
-

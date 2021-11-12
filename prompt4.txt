@@ -38,8 +38,8 @@ plain text steps:
 solution:
 
 function unique(string) {
-  if (string.length === 1) {
-    return true;
+  if (string.length === 0) {
+    return "no characters to compare";
   } for (let i=0; i< string.length, i++) {
     for (let j=0; j< string.length, j++) {
       if(string[i] === string[j] && i !== j) {
