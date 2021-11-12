@@ -73,5 +73,37 @@ filter solution:
 ----------------------------------------
 
 recursive plain text steps:
-  1) not sure... moving on for time sake and will come back to this :)
+  iterate backwards so it will catch all duplicates!!!
+  compare the last index to all the others and see if it's duplicated. if so remove that index, if not keep it!
+
+  1) create function that takes the array as an argument
+    function(array)
+  2) create edge case to break out of recursion
+    if array.length === 1, return array[0]
+  3) isolate the last index 
+    const element = array[length-1]
+    const restArray = array.splice(-1)
+    a) check if the rest of the array contains the first index value
+      1) if(restArray.includes(element)) 
+        don't save the value, begin recursion:
+        return function(restArray)
+      2) if (!restArray.includes(element))
+        save the element, begin recursion:
+        return function(restArray) + element
+    
+
+recursive solution:
+
+  removeDupe(array) {
+    if (array.length === 1) {
+      return array[0];
+    }
+    const element = array[length-1];
+    const restArray = array.splice(-1);
+    if(restArray.includes(element)) {
+      return removeDupe(restArray)
+    } else {
+      return removeDupe(restArray) + element;
+    }
+  }
 
