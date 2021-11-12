@@ -1,0 +1,47 @@
+Compressing Strings
+----------------------------------------
+
+prompt:
+  write and algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the character has been compressed.
+  ex: aaa = 3a
+
+requirements:
+  no special requirements
+
+----------------------------------------
+
+questions to ask:
+  always strings?
+  do we add only sequential duplications?
+  account for special characters?
+
+possible edge cases:
+  spaces?
+  empty string?
+
+----------------------------------------
+
+inputs/outputs:
+
+  input: "aaabccdddda"
+  output: "3ab2c4da"
+
+  input: "abababccc"
+  output: "ababab3c"
+
+----------------------------------------
+
+standard plain text steps:
+
+
+standard solution:
+
+
+----------------------------------------
+
+recursive plain text steps:
+
+
+recursive solution:
+
+
