@@ -1,0 +1,54 @@
+Array Sorting
+----------------------------------------
+
+prompt:
+  write an algorithm that sorts and array without using the sort() method
+
+hints:
+  check out the following sorting algorithms
+    quick sort 
+    merge sort
+    heap sort
+    insertion sort
+    bubble sort
+    selection sort
+
+----------------------------------------
+
+questions to ask:
+  sorting only numbers? only alphabetical? both?
+  sort "up" or "down" ?
+
+possible edge cases:
+  mixed arrays
+  positive and negative?
+
+----------------------------------------
+
+inputs/outputs:
+
+  input: [9, 2, 7, 12]
+  output: [2, 7, 9, 12]
+
+  ?input: [-2, 10, 25, -1, 5]
+  output: [-2, -1 ,5, 10, 25]
+
+  ?input: [dog, mouse, cat, bird]
+  output: [bird, cat, dog, mouse]
+
+----------------------------------------
+
+standard plain text steps:
+
+
+standard solution:
+
+
+----------------------------------------
+
+recursive plain text steps:
+
+
+recursive solution:
+
+
