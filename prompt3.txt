@@ -43,6 +43,24 @@ standard plain text steps:
 
 standard solution:
 
+  function compress(string) {
+    let count = 1;
+    let newStr = "";
+    for ( let i=0; i< string.length; i++) {
+      if (string[i] === string[i+1]) {
+        count ++
+      } else {
+        if (count > 1){
+          newStr.append(count + string[i]);
+          count = 1
+        } else {
+          newStr.append(string[i]);
+          count = 1
+        }
+      }
+    }
+    return newStr;
+  }
 
 ----------------------------------------
 
@@ -61,4 +79,31 @@ recursive plain text steps:
 
 recursive solution:
 
+  function compress(string, count, currentCharacter) {
+    if (string.length === 1) {
+      if (count > 1) {
+        return string.charAt[0];
+      } return count + string.charAt[0];
+    }
+    if (string.charAt[0] === currentCharacter) {
+      return compress(string.substring(1, string.length), count + 1, currentCharacter)
+    } else {
+      if (count > 1) {
+        return count + currentCharacter + compress(string.substring(1, string.length), 0, string.substring(1, string.length).charAt(0));
+      }
+    }
+  }
 
+  refactor:
+
+    function compress(string, count, current) {
+      let nextStr = string.substring(1, string.length)
+      if (string.length === 0) {
+        return (count === 1 ? "" : count) + current;
+      }{
+      if (string.charAt[0] === current) {
+        return compress(nextStr, count +1, current);
+      } else {
+        return (count === 1 ? "" : count) + current + compress(nextStr, 0, nextStr[0]);
+      }
+    }
