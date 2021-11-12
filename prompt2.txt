@@ -46,10 +46,20 @@ standard plain text steps:
 
 standard solution:
 
+  function removeDupes(array) {
+    let noDupe = [];
+    array.forEach(element => {
+      if(!noDupe.includes(element) {
+        noDupe.push(element);
+      });
+    });
+    return noDupe;
+  }
+
 ----------------------------------------
 
 standard plain text steps with filter():
-  .filter() takes a function as an argument, creating a new array with all elements that pass the "test" in the argument function.
+  .filter() takes a function as an argument, creating a new array with all elements that pass the "test" in the argument function. The arguments the filter callback function takes are (element, index, array)
 
   1) use filter taking two arguments 1. element, 2. index
   2) include in new array if the array.indexOf(element) === index
@@ -57,6 +67,9 @@ standard plain text steps with filter():
 
 filter solution:
 
+  function removeDupe(array) {
+    return array.filter((element, index) => array.indexOf(element) === index);
+  }
 ----------------------------------------
 
 recursive plain text steps:
