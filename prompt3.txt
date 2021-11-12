@@ -32,7 +32,14 @@ inputs/outputs:
 ----------------------------------------
 
 standard plain text steps:
-
+  1) declare counter variable (count = 1) to store number of duplicates
+  2) create a variable to store the new string (newStr = "");
+  3) start a loop:
+    a) if the current index === next index, count ++
+    b) if current index !== next index:
+      newStr.append(count + string[currentIndex]);
+      reset count to 1
+  4) return newStr
 
 standard solution:
 
@@ -40,7 +47,17 @@ standard solution:
 ----------------------------------------
 
 recursive plain text steps:
-
+  1) create function that takes the string, a counter set to 0, and the current character(string.charAt(0))
+  2) use the .length method to see if the string is only one character, if so:
+    return the character if count = 1;
+    if count > 1,
+    return count+ currentCharacter
+    (this is the branch that will break the recursive loop)
+  3) start branching:
+    a)if the string.charAt(0) === current character
+      return the function(string.substring(1, string.length), count +1, current character)
+    b) if string.charAt(0) !== current character 
+      return count+currentCharacter + function(string.substring(1, string.length), 0, string.charAt(0))
 
 recursive solution:
 
