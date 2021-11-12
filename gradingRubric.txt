@@ -1,0 +1,40 @@
+technical solution:
+--
+clarifying questions?
+
+write down inputs and outputs?
+
+consider edge cases?
+
+use technical language properly?
+
+explain their solution clearly? 
+
+summarize the code from input to output?
+
+correctly solve the problem?
+
+-------------------------------------------------
+
+professionalism:
+--
+speak clearly?
+
+make eye contact?
+
+correctly screen share?
+
+-------------------------------------------------
+
+feedback:
+--
+done well?
+
+
+could improve?
+
+
+
+
+
+
