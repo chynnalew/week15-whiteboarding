@@ -28,9 +28,13 @@ inputs/outputs:
 
 ----------------------------------------
 
-standard plain text steps:
+plain text steps:
+  1) use charAt to compare characters in the string
+  2) create a function that string as an argument (string)
+  3) use a loop inside a loop to compare each character to each character
+    if at any point string[i] === string [j] && i !== j, return false
+  4) if the loops complete without a return, return true
 
-
-standard solution:
+solution:
 
 
