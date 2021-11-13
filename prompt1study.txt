@@ -66,5 +66,5 @@ recursive solution:
     if (string.charAt(0) === " ") {
       index = "%20"
     }
-    return index+replaceSpace(string.substring(1));
+    return index.concat(replaceSpace(string.substring(1)));
   }

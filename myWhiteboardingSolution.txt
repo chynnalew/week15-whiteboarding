@@ -1,0 +1,54 @@
+
+What to expect: write a function that takes a string as the argument
+
+Assume the input string will always have one character
+
+input: “Jasmine ann jones”
+Output: “Jasmine%20ann%20jones”
+
+Input: “hello there”
+Output: “hello%20there
+
+Input: “a”
+Output: “a”
+
+1) separate the input string into an array “ “
+	[Jasmine, ann, jones]
+2) rejoin the array .join(%20)
+3) return string
+
+solution:
+
+function spaceFree(string) {
+	let array = string.split(“ “);
+	let newString = array.join(“%20”);
+	return newString;
+}
+
+refactored solution:
+
+function spaceFree = string => string.split(“ “).join(“%20”);
+
+1) function that takes a string
+2) .length to see if string is only one character 
+	then return that string
+3) let index = “charAt(0)”
+	if(charAt(0)=== “ “)
+	index = “%20”;
+4) return index.concat(spaceFree(string.substring(1))
+
+recursive solution:
+
+function spaceFree(string) {
+	if(string.length === 1) {
+		if(string.charAt(0) === “ “ ) {
+			return “%20”
+		}
+	} else {
+		return string;
+	let index = string.charAt(0);
+	if (string.charAt(0) === “ “ ) {
+		index = “%20”;
+	{ 
+	return index.concat(spaceFree(string.substring(1));
+{
